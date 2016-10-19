@@ -4,18 +4,22 @@ use App\FizzBuzz;
 
 class FizzBuzzTest extends PHPUnit_Framework_TestCase
 {
-    public function test_that_it_maps_numbers_to_expected_values()
+    /**
+     * @dataProvider validValuesProvider
+     */
+    public function test_that_it_maps_numbers_to_expected_values($number, $expected)
     {
-        $values = [
-            1 => '1',
-            3 => 'Fizz',
-            5 => 'Buzz',
-            15 => 'FizzBuzz'
-        ];
+        $this->assertEquals($expected, (string)(new FizzBuzz($number)));
+    }
 
-        foreach ($values as $number => $expected) {
-            $this->assertEquals($expected, (string)(new FizzBuzz($number)));
-        }
+    public function validValuesProvider()
+    {
+        return [
+            [1, '1'],
+            [3, 'Fizz'],
+            [5, 'Buzz'],
+            [15, 'FizzBuzz']
+        ];
     }
 
     /**
