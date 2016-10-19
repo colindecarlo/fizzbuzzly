@@ -4,24 +4,18 @@ use App\FizzBuzz;
 
 class FizzBuzzTest extends PHPUnit_Framework_TestCase
 {
-    public function test_that_values_divisible_by_only_three_are_represented_as_Fizz()
+    public function test_that_it_maps_numbers_to_expected_values()
     {
-        $this->assertEquals('Fizz', (string)(new FizzBuzz(3)));
-    }
+        $values = [
+            1 => '1',
+            3 => 'Fizz',
+            5 => 'Buzz',
+            15 => 'FizzBuzz'
+        ];
 
-    public function test_that_values_divisible_by_only_five_are_represented_as_Buzz()
-    {
-        $this->assertEquals('Buzz', (string)(new FizzBuzz(5)));
-    }
-
-    public function test_that_values_divisible_by_both_three_and_five_are_represented_as_FizzBuzz()
-    {
-        $this->assertEquals('FizzBuzz', (string)(new FizzBuzz(15)));
-    }
-
-    public function test_that_values_not_divisible_by_three_or_five_are_represented_as_their_individual_value()
-    {
-        $this->assertEquals('1', (string)(new FizzBuzz(1)));
+        foreach ($values as $number => $expected) {
+            $this->assertEquals($expected, (string)(new FizzBuzz($number)));
+        }
     }
 
     /**
