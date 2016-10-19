@@ -24,19 +24,19 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase
 
     /**
      * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage Invalid value: 0
+     * @expectedExceptionMessageRegExp  /Invalid value: \d+/
+     * @dataProvider invalidValuesProvider
      */
-    public function test_that_values_less_than_one_will_throw_an_InvalidArgument_exception()
+    public function test_that_out_of_bounds_values_will_throw_an_InvalidArgument_exception($number)
     {
-        new FizzBuzz(0);
+        new FizzBuzz($number);
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage Invalid value: 101
-     */
-    public function test_that_values_greater_than_one_hundred_will_throw_an_InvalidArgument_exception()
+    public function invalidValuesProvider()
     {
-        new FizzBuzz(101);
+        return [
+            [0],
+            [101],
+        ];
     }
 }
