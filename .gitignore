@@ -1,0 +1,10 @@
+/.vagrant
+/node_modules
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+Vagrantfile
+Homestead.json
+Homestead.yaml
+.env
