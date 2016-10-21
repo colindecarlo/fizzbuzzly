@@ -5,10 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <title>FizzBuzzly</title>
 
         <!-- Styles -->
         <style>
@@ -23,6 +20,10 @@
 
             .full-height {
                 height: 100vh;
+            }
+
+            .hero-bg {
+                background: linear-gradient(to bottom, #fafafa, #eeeeee);
             }
 
             .flex-center {
@@ -59,36 +60,64 @@
                 text-transform: uppercase;
             }
 
+            .hero-image {
+                width: 40vw;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            img {
+                margin-bottom: 2rem;
+            }
+
+            h2,
+            h4 {
+                margin: 0;
+            }
+
+            h2 {
+                font-weight: 300;
+                font-size: 1rem;
+                letter-spacing: .1rem;
+                text-transform: uppercase;
+                margin-bottom: .5rem;
+            }
+
+            h4 {
+                font-weight: 500;
+                font-size: .65rem;
+                letter-spacing: .1rem;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+            }
+
+            a {
+                color: #ff4a99;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                background: #94ff9c;
+                border: 1px solid #ff4a99;
+                text-decoration: none;
+                color: #ff4a99;
+                font-size: .875rem;
+                letter-spacing: .1rem;
+                text-transform: uppercase;
+                border-radius: 100px;
+                display: inline-block;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
+        <div class="flex-center position-ref full-height hero-bg">
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <img src="img/icon.svg" class="hero-image" alt="">
+                <h2>A useless website</h2>
+                <h4>Provided for you by <a href="https://twitter.com/colindecarlo" target="_blank">@colindecarlo</a></h4>
+                <a href="https://github.com/colindecarlo/fizzbuzzly" target="_blank" class="btn">Fork me on github</a>
             </div>
         </div>
     </body>
